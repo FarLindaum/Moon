@@ -1,22 +1,22 @@
-## Moon - Created by: MoonDev.#1337
+# Moon - Created by: MoonDev.#1337
 
-# How to use it:
+## How to use it:
 
-Insert your tokens in the "Tokens.txt" File! Install Python, and do pip install -r requirements.txt. You are ready to go!
+- Insert your tokens in the "Tokens.txt" File! Install Python, and do pip install -r requirements.txt. You are ready to go!
 
-# A Discord Raider / Discord Tool:
+## A Discord Raider / Discord Tool:
 
-This is a Public Discord Raider that can be found on my Github!
-
-
-# Why is it Free?
-
-Well. Ive Seen alot of People Sell Discord Raiders. making one is Fairly Easy. Dont Pay for shit like that!
+- This is a Public Discord Raider that can be found on my Github!
 
 
-# Updates: 
+## Why is it Free?
 
-I am conviced ill update this in the Future. this is only a little side Project so dont expect that Much!
+- Well. Ive Seen alot of People Sell Discord Raiders. making one is Fairly Easy. Dont Pay for shit like that!
 
 
-- MoonDev.#1337
+## Updates: 
+
+- I am conviced ill update this in the Future. this is only a little side Project so dont expect that Much!
+
+
+# MoonDev.#1337
