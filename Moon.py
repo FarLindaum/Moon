@@ -15,12 +15,13 @@ MainTitle = '''
                                                 ╩ ╩╚═╝╚═╝╝╚╝
 
                               ╔═══════════════════════════════════════════════╗
-                              ║  Joiner                    -          1       ║
+                              ║  Server-Joiner             -          1       ║
                               ║  Server-Flooder            -          2       ║
-                              ║  DM-Flooder                -          3       ║
-                              ║  Change-Nickname           -          4       ║
-                              ║  Typing-Status             -          5       ║
-                              ║  Webhook-Options           -          6       ║
+                              ║  Server-Leaver             -          3       ║
+                              ║  DM-Friender               -          4       ║
+                              ║  DM-Flooder                -          5       ║
+                              ║  Check-Tokens              -          6       ║
+                              ║  Generate-Tokens           -          7       ║
                               ║  Exit                      -          0       ║
                               ╚═══════════════════════════════════════════════╝
                                         
@@ -116,25 +117,29 @@ def Main():
 
     elif Selection == "3":
         
-        DMFlooder
+        ServerLeaver()
     
     elif Selection == "4":
 
-        ChangeNickName()
+        DMFriender()
 
     elif Selection == "5":
 
-        Typing()
+        DMFlooder()
 
     elif Selection == "6":
 
-        Webhook()
+        CheckTokens()
+
+    elif Selection == "7":
+
+        Generate()
 
     elif Selection == "0":
 
         exit()
 
-def Join():
+def Join(): # Add ban shit
 
     TokenList = []
 
@@ -164,14 +169,167 @@ def Join():
                 
                 joined += 1
 
-                joined = str(joined)
-
-                print("Token: " + Token + " Joined the Server Using the Invite Code: " + Invite + " - " + joined)
+                print("[ +++ ] Token: " + Token + " Joined the Server Using the Invite Code: " + Invite + " - " + str(joined))
 
             else:
 
-                print("Token: " + Token + " Couldnt Join the Server! Check the Tokens Again or the Account has been Banned!")
+                print("[ --- ] Token: " + Token + " Couldnt Join the Server! Check the Tokens Again or the Account has been Banned!")
+
+    time.sleep(2)
+
+    Main()
 
 def ServerFlooder():
 
-Check()
+    TokenList = []
+
+    sent = 0
+
+    os.system("cls")
+
+    print(SplashTitle)
+
+    Channel_ID = input("[ >>> ] Moon@Channel-ID: ")
+
+    os.system("cls")
+
+    print(SplashTitle)
+
+    Message = input("[ >>> ] Moon@Message-Content: ")
+
+    with open(f'{dir_path}\\Working.txt', 'r') as Tokens:
+
+        for line in Tokens:
+
+            TokenList.append(line.strip())
+
+        while 1:
+
+            for Token in TokenList:
+
+                headers = {
+
+                    "authorization": f"{Token}"
+                }
+
+                payload = {'content' : f'{Message}', 'tts' : 'true'}
+
+                r = requests.post(f"https://discordapp.com/api/v8/channels/{Channel_ID}/messages", headers=headers, json=payload)
+
+                if r.status_code == 200:
+
+                    sent += 1
+
+                    print("[ +++ ] Token: " + Token + " Sent Message: " + Message + " - " + str(sent))
+
+
+                elif "You are being rate limited" in r.text:
+
+                    print("[ --- ] Token: " + Token + " Couldnt Send Message! You are being Ratelimited!")
+
+                else:
+
+                    print("[ --- ] Token: " + Token + " Couldnt Send Message! Are you Sure you Entered everything Correct?")
+    
+    
+
+def ServerLeaver():
+
+    TokenList = []
+
+    left = 0
+
+    os.system("cls")
+
+    print(SplashTitle)
+
+    ServerID = input("[ >>> ] Moon@Server-ID: ")
+
+    
+    with open(f'{dir_path}\\Working.txt', 'r') as Tokens:
+
+        for line in Tokens:
+
+            TokenList.append(line.strip())
+
+        
+        for Token in TokenList:
+        
+            headers = {
+        
+                "authorization": f"{Token}"
+        
+            }
+        
+            r = requests.delete(f"https://discord.com/api/v8/users/@me/guilds/{ServerID}", headers=headers)
+        
+            if r.status_code == 204:
+    
+                left += 1
+
+                print("[ +++ ] Token: " + Token + " Left Server: " + ServerID + " - " + str(left))
+        
+            else:
+  
+                print("[ --- ] Token: " + Token + " Couldnt Leave Server! Are you Sure you entered Everything Correct?")
+
+    time.sleep(2)
+
+    Main()
+
+def DMFriender(): 
+
+
+    TokenList = []
+
+    friends = 0
+
+    os.system("cls")
+
+    print(SplashTitle)
+
+    UserID = input("[ >>> ] Moon@User-ID: ")
+
+    
+    with open(f'{dir_path}\\Working.txt', 'r') as Tokens:
+
+        for line in Tokens:
+
+            TokenList.append(line.strip())
+
+        
+        for Token in TokenList:
+        
+            headers = {
+        
+                "authorization": f"{Token}"
+        
+            }
+
+            payload = {'' : ''}
+        
+            r = requests.put(f"https://discordapp.com/api/v8/users/@me/relationships/{UserID}", headers=headers, json=payload)
+        
+            if r.status_code == 204:
+    
+                friends += 1
+
+                print("[ +++ ] Token: " + Token + " Friended User: " + UserID + " - " + str(friends))
+
+            elif "Cannot send friend request to self" in r.text:
+
+                print("[ --- ] Token: " + Token + " Cant add itself!")
+        
+            else:
+  
+                print("[ --- ] Token: " + Token + " Couldnt Friend User! Are you Sure you entered Everything Correct?")
+
+    time.sleep(2)
+
+    Main()
+    
+
+
+if __name__ == "__main__":
+
+    Check()
