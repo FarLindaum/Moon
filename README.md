@@ -14,6 +14,18 @@
 
 - This Repository will be 🔱 Updated 🔱 Soon!
 
+## 📡 How to use Moon 📡
+
+- Start the ⚔️ Application ⚔️, it will look like this:
+
+![First Image](https://i.imgur.com/ZuQ9INU.gif)
+
+- Generate 🪐 Tokens 🪐 and Check them.
+
+- Working Tokens will be Moved into 📑 "Working.txt" 📑 !
+
+- Then you can ❄️ Spam ❄️ !
+
 ## 📸 Images 📸
 
 ![First Image](https://i.imgur.com/F11AWOP.png)
