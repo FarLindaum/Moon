@@ -1,5 +1,7 @@
 # 🌙 Moon - By MoonDev 🌙
 
+### 💣 The Superior Free-Discord-Raider! 💣
+
 ## 📌 What is Moon 📌
 
 - Moon is an 🔓 Open-Source 🔓 Discord Raider / Spammer.
