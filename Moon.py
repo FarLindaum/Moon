@@ -313,7 +313,7 @@ def Main():
 
         exit()
 
-def Join(): # Add ban shit
+def Join():
 
     TokenList = []
 
