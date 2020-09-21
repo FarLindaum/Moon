@@ -80,6 +80,10 @@ def PreScreen():
     elif Selection == "0":
 
         exit()
+        
+    else:
+      
+        PreScreen()
 
 def CheckGenerated():
     
@@ -312,6 +316,10 @@ def Main():
     elif Selection == "0":
 
         exit()
+        
+    else:
+        
+        Main()
 
 def Join():
 
