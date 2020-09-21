@@ -14,9 +14,9 @@
 
 ## 📸 Images 📸
 
-1. https://imgur.com/F11AWOP
-2. https://imgur.com/CiWiFsg
+![First Image](https://imgur.com/F11AWOP)
+![Second Image](https://imgur.com/CiWiFsg)
 
-## Author 
+## 🔥 Author 🔥
 
 - Hey, im 🌙 MoonDev. 🌙 
