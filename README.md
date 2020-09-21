@@ -16,6 +16,8 @@
 
 ## 📡 How to use Moon 📡
 
+- Download 🐍 Python 🐍 from: https://www.python.org/ (V. 3././) open 🖥 "Command Prompt" 🖥 and Type: "pip install -r requirements.txt"
+
 - Start the ⚔️ Application ⚔️, it will look like this:
 
 ![First Image](https://i.imgur.com/ZuQ9INU.gif)
@@ -24,7 +26,7 @@
 
 - Working Tokens will be Moved into 📑 "Working.txt" 📑 !
 
-- Then you can ❄️ Spam ❄️ !
+- Then you can ❄️ Start ❄️ !
 
 ## 📸 Images 📸
 
@@ -48,3 +50,13 @@
 - ⚜️ Instagram: https://www.instagram.com/moondev__ ⚜️
 
 - 🧬 Discord: MoonDev.#1337 🧬
+
+- ⚖️ Discord-Server: ////////// (Will be added Later!) ⚖️
+
+## 🌠 Thanks 🌠 
+
+Thanks for using Moon <3
+
+
++ MoonDev!
+
