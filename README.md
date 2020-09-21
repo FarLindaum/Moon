@@ -19,4 +19,18 @@
 
 ## 🔥 Author 🔥
 
-- Hey, im 🌙 MoonDev. 🌙 
+- Hey, im 🌙 MoonDev. 🌙!
+
+- I made this for 👨‍🎓 👩‍🎓 Educational 👨‍🎓 👩‍🎓 Purposes Only!
+
+- You can 😳 Support Me 😳 in the Support Me Section!
+
+- Dont just 🤡 Skidrip 🤡 this Code, try to Understand it!
+
+## 🚀 Support Me 🚀
+
+- 👑 Youtube: https://www.youtube.com/channel/UCllJAOzW1_Uu8eHzM9KIfdQ?view_as=subscriber 👑
+
+- ⚜️ Instagram: https://www.instagram.com/moondev__ ⚜️
+
+- 🧬 Discord: MoonDev.#1337 🧬
