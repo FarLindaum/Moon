@@ -14,8 +14,8 @@
 
 ## 📸 Images 📸
 
-![First Image](https://imgur.com/F11AWOP)
-![Second Image](https://imgur.com/CiWiFsg)
+![First Image](https://i.imgur.com/F11AWOP.png)
+![Second Image](https://i.imgur.com/CiWiFsg.png)
 
 ## 🔥 Author 🔥
 
