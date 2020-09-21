@@ -1,6 +1,1 @@
-<div align="center">
-<img 
-height="100px" 
-width="100px"
-src="https://imgur.com/a/1uPfism"
-></img>
+<div style="text-align:center"><img src="https://imgur.com/rH41ezQ" /></div>
