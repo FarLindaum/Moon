@@ -1,1 +1,3 @@
-<div style="text-align:center"><img src="https://imgur.com/rH41ezQ" /></div>
+<p align="center">
+  <img width="600" height="200" src="https://www.python.org/python-.png">
+</p>
