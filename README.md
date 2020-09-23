@@ -33,6 +33,14 @@
 ![First Image](https://i.imgur.com/F11AWOP.png)
 ![Second Image](https://i.imgur.com/CiWiFsg.png)
 
+## 🐛 Bugs 🐛
+
+- In Case you find an ☢️ Error ☢️ report it! You can do so by sending me a Message on my 🔮 Social Media 🔮 mentioned below!
+
+- You can also use the git 🏮 "Issues" 🏮!
+
+- The Bug will be ⚙️ Fixed ⚙️ as soon as possible
+
 ## 🔥 Author 🔥
 
 - Hey, im 🌙 MoonDev. 🌙!
@@ -55,8 +63,8 @@
 
 ## 🌠 Thanks 🌠 
 
-Thanks for using Moon <3
+- Thanks for using Moon <3
 
 
-+ MoonDev!
+### - MoonDev!
 
