@@ -23,7 +23,6 @@ MainTitle = '''
                               ║  DM-Friender               -          4       ║
                               ║  DM-Flooder                -          5       ║
                               ║  Check-Tokens              -          6       ║
-                              ║  Generate-Tokens           -          7       ║
                               ║  Exit                      -          0       ║
                               ╚═══════════════════════════════════════════════╝
                                         
@@ -39,7 +38,6 @@ PreTitle = '''
                               ║  Main-Menu                 -          1       ║
                               ║  Check-Tokens.txt          -          2       ║
                               ║  Check-Working.txt         -          3       ║
-                              ║  Check-Generated.txt       -          4       ║
                               ║  Exit                      -          0       ║
                               ╚═══════════════════════════════════════════════╝
                                         
@@ -84,70 +82,6 @@ def PreScreen():
     else:
       
         PreScreen()
-
-def CheckGenerated():
-    
-    os.system("cls")
-    print(SplashTitle)
-    print("[ /-/ ] Moon@Checking-Tokens")
-    time.sleep(1)
-
-    TokenList = []
-
-    WorkingTokens = []
-
-    count = 0
-
-    with open(f'{dir_path}\\TokensGenerated.txt', 'r') as Tokens:
-
-        for line in Tokens:
-
-            TokenList.append(line.strip())
-
-            count += 1
-
-    os.system("cls")
-
-    print(SplashTitle)
-
-    print(f"[ /-/ ] Moon@Detected-{count}-Tokens")
-
-    time.sleep(1)
-
-    os.system("cls")
-
-    print(SplashTitle)
-
-    for Token in TokenList:
-        
-        headers = {'Authorization' : Token}
-
-        r = requests.get(f"https://discord.com/api/v8/users/@me", headers=headers)
-
-        if r.status_code == 200:
-
-            print(f"[ +++ ] Moon@{Token}-Valid")
-
-            WorkingTokens.append(Token)
-
-        else:
-
-            print(f"[ --- ] Moon@{Token}-Invalid")
-
-
-    open(f'{dir_path}\\Working.txt', 'w+').write(str("\n".join(WorkingTokens)))
-
-    os.system("cls")
-
-    time.sleep(0.5)
-
-    print(SplashTitle)
-
-    print(f"[ /-/ ] Moon@Checked-Tokens")
-
-    time.sleep(1)
-
-    Main()
 
 def CheckWorking():
 
@@ -308,10 +242,6 @@ def Main():
     elif Selection == "6":
 
         Check()
-
-    elif Selection == "7":
-
-        Generate()
 
     elif Selection == "0":
 
@@ -562,55 +492,6 @@ def DMFlooder():
                 else:
 
                     print("[ --- ] Token: " + Token + " Couldnt Send Message! Are you Sure you Entered everything Correct?")
-
-def Generate():
-
-    os.system("cls")
-
-    print(SplashTitle)
-
-    Amount = input('[ >>> ] How many Generations: ')
-
-    count = 0
-
-    TokensGen = []
-
-    os.system("cls")
-
-    for i in range(int(Amount)):
-
-
-        Token1 = f'Nz{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}.X{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}.{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}'
-        Token2 = f'NT{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}.X{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}.{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}'
-        Token3 = f'ND{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}.X{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}.{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}'
-        Token4 = f'Nz{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}.X{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}.{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}'
-        Token5 = f'Nj{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}.X{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}.{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}'
-        Token6 = f'ND{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}.X{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}.{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}{(random.choice(string.ascii_letters + string.digits))}'
-
-        tokens = [
-            Token1,
-            Token2,
-            Token3,
-            Token4,
-            Token5,
-            Token6
-            ]
-
-        
-        count += 1
-
-        TokensReal = random.choice(tokens)
-
-        print('[ +++ ] Generated: '  +  TokensReal  + ' - ' + str(count))
-
-        TokensGen.append(TokensReal)
-
-        
- 
-    open(f'{dir_path}\\TokensGenerated.txt', 'w+').write(str("\n".join(TokensGen)))
-
-
-    Main()
     
 
 
